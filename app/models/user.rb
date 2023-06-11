@@ -5,4 +5,10 @@ class User < ApplicationRecord
   has_many :trades
   has_many :categories
 
+  # Validations
+  # A user must have a name
+  validates :name, presence :true
+
+  # A user name must not exceed 50 characters
+  validates :name, length: { maximum: 50 }
 end

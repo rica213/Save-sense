@@ -26,4 +26,15 @@ RSpec.describe Trade, type: :model do
       expect(@trade).to_not be_valid
     end
   end
+
+  describe 'Association' do
+    it 'should belong to a user' do
+      expect(@trade.author_id).to eq(@user.id)
+    end
+
+    it 'should have one or many categories' do
+      t = Trade.reflect_on_association(:categories)
+      expect(t.macro).to eq(:has_many)
+    end
+  end
 end

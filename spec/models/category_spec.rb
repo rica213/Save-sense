@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   before :all do
     @user = User.create(name: 'Kristen Stewart')
-    @category = Category.create(name: 'Food', user_id: @user.id)
+    @category = Category.create(name: 'Food', author_id: @user.id)
   end
 
   describe 'Validation' do

@@ -172,6 +172,7 @@ Thank you for your support and for being a part of this journey! ❤️
 
 I would like to thank: 
 - Microverse
+- [Gregoire Vella](https://www.behance.net/gregoirevella) for the original design idea
 - Code Reviewers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

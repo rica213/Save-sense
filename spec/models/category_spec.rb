@@ -1,5 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before :all do
+    @user = User.create(name: 'Kristen Stewart')
+    @category = Category.create(name: 'Food', user_id: @user.id)
+  end
+  describe 'Validation' do
+    it 'should validate the presence of a name' do
+      @category.name = nil
+      expect(@category).to_not be_valid
+    end
+
+    it 'should validate the length of the name' do
+      @category.name = 'a' * 51
+      expect(@category).to_not be_valid
+    end
+  end
 end

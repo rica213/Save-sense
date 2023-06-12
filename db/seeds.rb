@@ -1,10 +1,15 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
+# Generate a random password for the users
+def generate_password
+  Devise.friendly_token.first(8)
+end
+
 # Users
-user_one = User.create(name: "Margaret")
-user_two = User.create(name: "Gavin")
-user_three = User.create(name: "Megan")
+user_one = User.create!(name: "Margaret", email: 'user_one@weirdmail.com', password: generate_password)
+user_two = User.create!(name: "Gavin", email: 'user_two@dreamland.com', password: generate_password)
+user_three = User.create!(name: "Megan", email: 'user_three@catnapping.com', password: generate_password)
 
 # Trades
 # Trades that belongs to user_one

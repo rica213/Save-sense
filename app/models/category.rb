@@ -8,8 +8,8 @@ class Category < ApplicationRecord
 
   # Validations
   # A category must have a name
-  # validates :name, presence: true
+  validates :name, presence: true
 
   # A category name must not exceed 50 characters
-  # validates :name, length: { maximum: 50 }
+  validates :name, length: { maximum: 50 }
 end

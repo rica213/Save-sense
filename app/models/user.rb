@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   # Validations
   # A user must have a name
-  # validates :name, presence: true
+  validates :name, presence: true
 
   # A user name must not exceed 50 characters
-  # validates :name, length: { maximum: 50 }
+  validates :name, length: { maximum: 50 }
 end

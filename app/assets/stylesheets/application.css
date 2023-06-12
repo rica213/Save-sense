@@ -13,3 +13,117 @@
  *= require_tree .
  *= require_self
  */
+/* stylelint-disable csstree/validator */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url(../fonts/proximanova-bold.otf) format(opentype);
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url(../fonts/proximanova-light.otf) format(opentype);
+}
+
+html {
+  font-size: calc(15px + 0.390625vw);
+  font-family: 'Proxima Nova Light', sans-serif;
+  color: var(--text);
+}
+
+:root {
+  --primary: rgb(55, 120, 194);
+  --primary-darker: rgb(29 81 139);
+  --secondary: #5fb523;
+  --text: #434b54;
+}
+
+body {
+  background: var(--primary);
+  background: linear-gradient(90deg, var(--primary) 0%, rgba(0, 0, 0, 0) 50%, var(--primary) 80%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 425px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0.25rem;
+  background-color: white;
+}
+
+/* start splash screen */
+
+.splash_screen,
+.main_authentication {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.splash_screen {
+  align-items: center;
+  height: 100%;
+}
+
+.name_app {
+  transform: translateY(35vh);
+  font-size: 2.5rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.main_authentication {
+  gap: 0.5rem;
+}
+
+.main_authentication * {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.sign_in {
+  background: var(--primary);
+  color: white;
+}
+
+.sign_in:hover {
+  background: var(--primary-darker);
+  font-size: 1.05rem;
+}
+
+.sign_in:focus {
+  background: white;
+  color: var(--primary);
+  border: 0.5px solid var(--primary);
+}
+
+.sign_up {
+  background: white;
+  color: var(--text);
+}
+
+.sign_up:hover {
+  border: 0.5px solid var(--text);
+  font-size: 1.05rem;
+}
+
+.sign_up:focus {
+  background: var(--text);
+  color: white;
+}
+
+/* end splash screen */

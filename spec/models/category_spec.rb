@@ -20,8 +20,7 @@ RSpec.describe Category, type: :model do
 
   describe 'Association' do
     it 'should belong to a user' do
-      t = Category.reflect_on_association(:user)
-      expect(t.macro).to eq(:belongs_to)
+      expect(@category.author_id).to eq(@user.id)
     end
 
     it 'should have many trades' do

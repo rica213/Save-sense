@@ -91,13 +91,22 @@ To install dependencies, run:
 bundle install
 ```
 
-To set up the database, run:
+**Set up the database** <br>
+
+To create the database, run:
+
 ```sh
 rails db:create
 ```
+To create the schema, run:
 
 ```sh
 rails db:migrate
+```
+To populate the database, run:
+
+```sh
+rails db:seed
 ```
 
 ## Usage

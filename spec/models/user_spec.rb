@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     @user = User.create(name: 'Kristen Stewart')
   end
 
-  describe "Validation" do
+  describe 'Validation' do
     it 'should validate the presence of a name' do
       @user.name = nil
       expect(@user).to_not be_valid
@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "Association" do
+  describe 'Association' do
     it 'should have many trades' do
       t = User.reflect_on_association(:trades)
       expect(t.macro).to eq(:has_many)

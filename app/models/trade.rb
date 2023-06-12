@@ -3,7 +3,7 @@ class Trade < ApplicationRecord
   # A trade belongs to a user
   # A trade can have one or many categories
   belongs_to :author, class_name: 'User', foreign_key: :author_id
-  has_many  :trade_categories, dependent: :destroy
+  has_many :trade_categories, dependent: :destroy
   has_many :categories, through: :trade_categories
 
   # Validations

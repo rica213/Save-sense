@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: Save_sense_production
-  username: Save_sense
-  password: <%= ENV["SAVE_SENSE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

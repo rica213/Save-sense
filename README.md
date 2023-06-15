@@ -14,6 +14,7 @@
 - [🛠 Built With ](#-built-with-)
   - [📌 Tech Stack ](#-tech-stack-)
 - [🎲 Key Features ](#-key-features-)
+- [🚀 Live Demo](#-live-demo-)
 - [💻 Getting Started ](#-getting-started-)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -64,6 +65,12 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+# 🚀 Live Demo <a name="live-demo"></a>
+
+👉 [Live Demo](https://save-sense.onrender.com/)<br>
+👉 [Video Walkthrough](https://www.loom.com/share/54e91fd72bb74006ad8239c175df6978?sid=824903f4-44e8-494d-8723-933a10078a98)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
 # 💻 Getting Started <a name="getting-started"></a>

@@ -50,7 +50,17 @@
 
 # 🎲 Key Features <a name="key-features"></a>
 
-Coming Soon
+- Create a new account
+- Log in to an existing account
+- Sign out from a session
+- Create a category
+- Add transaction to a category
+- Check the list of transactions for a particular category
+- Display the total amount of transactions for a particular category
+- Tests for category
+- Tests for transaction
+- Toggle menu
+- Dynamic navbar
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,11 +113,6 @@ To create the schema, run:
 ```sh
 rails db:migrate
 ```
-To populate the database, run:
-
-```sh
-rails db:seed
-```
 
 ## Usage
 
@@ -145,7 +150,10 @@ To run tests, run the following command:
 
 # 🔭 Future Features <a name="future-features"></a>
 
-  Coming Soon
+  - Delete a category
+  - Edit a category
+  - Delete a transaction
+  - Edit a transaction
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

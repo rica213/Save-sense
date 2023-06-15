@@ -1,0 +1,11 @@
+<p class="total_amount">Total amount: $<%=@total_amount %> </p>
+<section class="trades_container">
+  <div class="trades_list">
+    <% @trades.each do |trade| %>
+      <%= render partial: 'shared/trade_item', locals: { trade: trade } %>
+    <% end %>
+  </div>
+  <div class="action_wrapper">
+    <%= link_to 'Add Transaction', new_trade_path, class: 'action_btn' %>
+  </div>
+</section>

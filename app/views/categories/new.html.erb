@@ -1,2 +1,11 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+<section class="form_container">
+  <%= form_for @category do |f| %>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: 'Enter Category Name Here', required: true %>
+      <%= f.text_field :icon, placeholder: 'Enter The Path To The Icon Here', required: true %>
+    </div>
+  <% end %>
+  <div class="action_wrapper">
+    <%= link_to 'Save Category', "#", class: 'action_btn', id: 'save_category' %>
+  </div>
+</section>

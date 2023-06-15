@@ -1,0 +1,23 @@
+<section class="form_container">
+  <%# Render error message if there is any %>
+  <% if @errors %>
+    <%= debug @trade.errors %>
+    <div class="error_messages">
+      <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for @trade do |f| %>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: 'Enter Transaction Name Here', required: true %>
+      <%= f.text_field :amount, autofocus: true, placeholder: 'Enter Amount', required: true %>
+      <%= f.collection_select :category_ids, @categories, :id, :name, { include_blank: 'Select one or many categories'}, { multiple: true} %>
+    </div>
+  <% end %>
+  <div class="action_wrapper">
+    <%= link_to 'Save Transaction', "#", class: 'action_btn', id: 'save_trade' %>
+  </div>
+</section>

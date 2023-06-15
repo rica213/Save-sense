@@ -6,8 +6,8 @@ class Ability
     user ||= User.new
 
     # Logged in user can manage all trades and categories that belongs to them
-    can :manage, Trade, user_id: user.id
-    can :manage, Category, user_id: user.id
+    can :manage, Trade, author_id: user.id
+    can :manage, Category, author_id: user.id
 
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md

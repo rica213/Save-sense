@@ -1,7 +1,19 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
   before_action :authenticate_user!, :set_navbar_title, :set_toggle_menu, :set_action_link_text, :set_action_link_path,
                 unless: :splash_action?
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  # Handle errors from invalid url
+  def handle_routing_error
+    flash[:error] = 'Invalid URL'
+    redirect_to root_path
+  end
+
+  def after_sign_in_path_for(_resource)
+    root_path
+  end
 
   protected
 
@@ -13,12 +25,12 @@ class ApplicationController < ActionController::Base
     title_mapping = {
       'sessions#new' => 'Login',
       'registrations#new' => 'Register',
-      'trades#new' => 'New Trade',
-      'trades#index' => 'Trades',
-      'trades#show' => 'Trade',
+      'trades#new' => 'New Transaction',
+      'trades#index' => 'Transactions',
+      'trades#show' => 'Transaction',
       'categories#new' => 'New Category',
       'categories#index' => 'Categories',
-      'categories#show' => 'Details'
+      'categories#show' => 'Category Details'
     }
 
     default_title = 'Save Sense'
@@ -27,24 +39,23 @@ class ApplicationController < ActionController::Base
   end
 
   def set_action_link_text
-    @action_link_text = case "#{controller_name}##{action_name}"
-                        when 'sessions#new'
-                          'Log in'
-                        when 'registrations#new'
-                          'Sign up'
-                        else
+    @action_link_text = if user_signed_in?
                           'Sign out'
+                        elsif "#{controller_name}##{action_name}" == 'sessions#new'
+                          'Log in'
+                        elsif "#{controller_name}##{action_name}" == 'registrations#new'
+                          'Next'
                         end
   end
 
   def set_action_link_path
-    @action_link_path = if "#{controller_name}##{action_name}" == 'sessions#new'
-                          new_user_session_path
-                        elsif "#{controller_name}##{action_name}" == 'registrations#new'
-                          new_user_registration_path
-                        else
-                          destroy_user_session_path
-                        end
+    if user_signed_in?
+      @action_link_path = destroy_user_session_path
+    elsif "#{controller_name}##{action_name}" == 'sessions#new'
+      @action_link_path = new_user_session_path
+    elsif "#{controller_name}##{action_name}" == 'registrations#new'
+      @action_link_path = new_user_registration_path
+    end
   end
 
   def splash_action?

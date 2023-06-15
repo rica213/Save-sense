@@ -7,6 +7,10 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'toggle_menu' %>
+    <%= javascript_include_tag 'authenticate' %>
+
+    <%# javascript_include_tag 'authenticate', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <main>
@@ -18,5 +22,6 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
+    <div class="overlay hidden"></div>
   </body>
 </html>

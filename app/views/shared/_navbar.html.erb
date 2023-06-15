@@ -1,21 +1,33 @@
+<header>
+  <%# list of menu options %>
+  <ul id="menu_options" class="toggle-menu-hidden hidden">
+    <li><%= link_to "Categories", categories_path %></li>
+  </ul>
   <nav class="navbar">
-  <div class="navbar-left">
-    <% if @show_toggle_menu %>
-      <menu class="toggle_menu">&equiv;</menu>
-    <% else %>
-      <%= link_to 'javascript:history.back()', class:'back-arrow' do %>
-        &#60;
+    <div class="navbar-left">
+      <% if @show_toggle_menu %>
+        <menu class="toggle_menu" id="toggle_menu">&equiv;</menu>
+      <% else %>
+        <%= link_to 'javascript:history.back()', class:'back-arrow' do %>
+          &#60;
+        <% end %>
       <% end %>
-    <% end %>
     </div>
     <div class="navbar-brand">
       <span class="navbar-title"><%= @navbar_title %></span>
     </div>
     <div class="navbar-right">
-      <% if @action_link_text.present? %>
+      <% if user_signed_in? %>
         <%= link_to @action_link_text, @action_link_path, method: :delete, class: 'auth_action' %>
       <% else %>
-        <%= link_to @action_link_text, @action_link_path, class: 'auth_action' %>
+        <% if @action_link_text.present? %>
+          <% if "#{controller_name}##{action_name}" == "sessions#new" %>
+            <%= link_to "Log in", "#", id: 'login_link', class: 'auth_action' %>
+          <% elsif "#{controller_name}##{action_name}" == "registrations#new" %>
+            <%= link_to "Next", "#", id: 'signup_link', class: 'auth_action' %>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   </nav>
+</header>

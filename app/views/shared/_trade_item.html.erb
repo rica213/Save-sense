@@ -1,0 +1,9 @@
+<article class="trade">
+  <div class="trade_description">
+    <h3><%= trade.name %></h3>
+    <p><%= trade.date(trade.created_at.to_s) %></p>
+  </div>
+  <div class="total_amount">
+    <p><%= "$#{trade.amount}" %></p>
+  </div>
+</article>

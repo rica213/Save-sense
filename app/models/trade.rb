@@ -18,4 +18,10 @@ class Trade < ApplicationRecord
 
   # An amount must be numeric
   validates :amount, numericality: true
+
+  # Extract date from a timestamp
+  def date(timestamp)
+    datetime = DateTime.parse(timestamp)
+    datetime.strftime('%d %b %Y')
+  end
 end

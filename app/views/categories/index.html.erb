@@ -1,2 +1,10 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<section class="categories_container">
+  <div class="categories_list">
+    <% @categories.each do |category| %>
+      <%= render partial: 'shared/category_item', locals: { category: category } %>
+    <% end %>
+  </div>
+  <div class="action_wrapper">
+    <%= link_to 'Add Category', new_category_path, class: 'action_btn' %>
+  </div>
+</section>

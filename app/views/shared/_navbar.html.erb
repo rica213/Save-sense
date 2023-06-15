@@ -1,0 +1,21 @@
+  <nav class="navbar">
+  <div class="navbar-left">
+    <% if @show_toggle_menu %>
+      <menu class="toggle_menu">&equiv;</menu>
+    <% else %>
+      <%= link_to 'javascript:history.back()', class:'back-arrow' do %>
+        &#60;
+      <% end %>
+    <% end %>
+    </div>
+    <div class="navbar-brand">
+      <span class="navbar-title"><%= @navbar_title %></span>
+    </div>
+    <div class="navbar-right">
+      <% if @action_link_text.present? %>
+        <%= link_to @action_link_text, @action_link_path, method: :delete, class: 'auth_action' %>
+      <% else %>
+        <%= link_to @action_link_text, @action_link_path, class: 'auth_action' %>
+      <% end %>
+    </div>
+  </nav>

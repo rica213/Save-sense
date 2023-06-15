@@ -12,4 +12,10 @@ class Category < ApplicationRecord
 
   # A category name must not exceed 50 characters
   validates :name, length: { maximum: 50 }
+
+  # Extract date from a timestamp
+  def date(timestamp)
+    datetime = DateTime.parse(timestamp)
+    datetime.strftime('%d %b %Y')
+  end
 end

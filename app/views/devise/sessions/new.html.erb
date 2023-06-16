@@ -1,0 +1,16 @@
+<section class="form_container">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter Your Email Here' %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Enter Your Password Here' %>
+    </div>
+    <div class="actions hidden">
+      <%= f.submit "Log in" %>
+    </div>
+  <% end %>
+  <div class="other_actions">
+    <%= render "devise/shared/links" %>
+  </div>
+</section>

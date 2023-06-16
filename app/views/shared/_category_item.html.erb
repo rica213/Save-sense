@@ -1,0 +1,12 @@
+<article class="category">
+  <div class="icon">
+    <img src= <%= category.icon %> height="65" width="100" alt="<%= category.name %> icon" />
+  </div>
+  <div class="category_description">
+    <h3><%= link_to category.name, category %></h3>
+    <p><%= category.date(category.created_at.to_s) %></p>
+  </div>
+  <div class="total_amount">
+    <p><%= "$#{category.trades.sum(:amount)}" %></p>
+  </div>
+</article>

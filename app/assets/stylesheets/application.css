@@ -1,0 +1,354 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *
+ * Uncomment the two lines below to use font-awesome
+ *
+ * @import "font-awesome-sprockets";
+ * @import "font-awesome";
+ */
+/* stylelint-disable csstree/validator */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url(../fonts/proximanova-bold.otf) format(opentype);
+}
+
+@font-face {
+  font-family: "Proxima Nova Light";
+  src: url(../fonts/proximanova-light.otf) format(opentype);
+}
+
+html {
+  font-size: calc(15px + 0.390625vw);
+  font-family: "Proxima Nova Light", sans-serif;
+  color: var(--text);
+}
+
+:root {
+  --primary: rgb(55, 120, 194);
+  --primary-darker: rgb(29 81 139);
+  --secondary: #5fb523;
+  --text: #434b54;
+}
+
+body {
+  background: var(--primary);
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary) 0%,
+      rgba(0, 0, 0, 0) 50%,
+      var(--primary) 80%
+    );
+  overflow-y: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: currentColor;
+}
+
+main {
+  max-width: 425px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: ghostwhite;
+}
+
+.notice {
+  font-size: 0.75rem;
+  color: var(--text);
+  background: rgb(201 247 229);
+}
+
+h3 {
+  text-align: center;
+  margin: 0.15rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* start splash screen */
+
+.splash_screen,
+.main_authentication {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.splash_screen {
+  align-items: center;
+  height: 100%;
+  padding: 0.25rem;
+}
+
+.name_app {
+  transform: translateY(35vh);
+  font-size: 2.5rem;
+  font-family: "Pacifico", cursive;
+}
+
+.main_authentication {
+  gap: 0.5rem;
+}
+
+.main_authentication * {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.sign_in {
+  background: var(--primary);
+  color: white;
+}
+
+.sign_in:hover {
+  background: var(--primary-darker);
+  font-size: 1.05rem;
+}
+
+.sign_in:focus {
+  background: white;
+  color: var(--primary);
+  border: 0.5px solid var(--primary);
+}
+
+.sign_up {
+  background: white;
+  color: var(--text);
+}
+
+.sign_up:hover {
+  border: 0.5px solid var(--text);
+  font-size: 1.05rem;
+}
+
+.sign_up:focus {
+  background: var(--text);
+  color: white;
+}
+
+/* end splash screen */
+
+/* start form authentication */
+
+.new_user {
+  width: 100%;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.other_actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.other_actions a {
+  color: currentColor;
+}
+
+/* end form authentication */
+
+/* start navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.back-arrow,
+.toggle_menu {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-title {
+  text-transform: uppercase;
+}
+
+.auth_action {
+  font-size: 0.85rem;
+}
+
+/* end navbar */
+
+/* start category */
+
+.form_container,
+.trades_container,
+.categories_container,
+.new_category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  height: 90vh;
+}
+
+.field,
+.new_category,
+.trades_list,
+.categories_list {
+  width: 100%;
+}
+
+.new_category {
+  height: 83vh;
+}
+
+.action_wrapper {
+  background-color: var(--secondary);
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+input.action_btn,
+.action_btn {
+  all: unset;
+  padding: 0.75rem 25%;
+  border: 0.5px solid white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.action_btn:hover {
+  background-color: white;
+  color: var(--secondary);
+  font-size: 0.85rem;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.25rem auto;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
+
+.category:hover {
+  box-shadow: 0 0 6px 0 rgba(55, 120, 194, 0.59);
+  -webkit-box-shadow: 0 0 6px 0 rgba(55, 120, 194, 0.59);
+  -moz-box-shadow: 0 0 6px 0 rgba(55, 120, 194, 0.59);
+  border: 1.5px solid var(--primary);
+}
+
+.icon {
+  width: 25%;
+}
+
+.category_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.total_amount {
+  text-align: right;
+}
+
+/* end category */
+
+/* start trade */
+select#trade_category_ids {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+}
+
+.new_trade {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trades_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.trade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.25rem auto;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
+
+/* end trade */
+
+/* start toggle menu */
+#menu_options,
+.toggle-menu-hidden {
+  position: absolute;
+  height: 100vh;
+  background: white;
+  padding-top: 5rem;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+
+.toggle-menu-hidden {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+#menu_options li {
+  margin-bottom: 3rem;
+}
+
+/* end toggle menu */

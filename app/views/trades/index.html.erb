@@ -1,0 +1,12 @@
+<section>
+<p class="total_amount">Total amount: $<%= @total_amount %> </p>
+
+<ul class="trades_list">
+  <% @trades.each do |transaction| %>
+    <li  class="trade">
+      <p>Name: <%= transaction.name %></p>
+      <p>Amount: $<%= transaction.amount %></p>
+    </li>
+  <% end %>
+</ul>
+</section>

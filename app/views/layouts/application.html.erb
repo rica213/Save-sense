@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SaveSense</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'toggle_menu' %>
+    <%= javascript_include_tag 'authenticate' %>
+
+    <%# javascript_include_tag 'authenticate', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <main>
+      <!-- Navbar -->
+      <% unless controller_name == 'users' && action_name == 'splash' %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </main>
+    <div class="overlay hidden"></div>
+  </body>
+</html>

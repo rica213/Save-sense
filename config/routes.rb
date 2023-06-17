@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "users#splash"
 
   resources :trades, only: [:index, :show, :new, :create]
-  resources :categories, only: [:index, :new, :create, :show] do
+  resources :categories, only: [:index, :new, :create] do
     resources :trades, only: [:index]
   end
   get "/splash", to: "users#splash"

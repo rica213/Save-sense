@@ -7,8 +7,6 @@ class TradesController < ApplicationController
     @total_amount = calculate_total_amount(@trades)
   end
 
-  def show; end
-
   def new
     @trade = Trade.new
     @categories = current_user.categories
